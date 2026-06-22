@@ -375,7 +375,7 @@ def score_stock(row, market_return_20):
         }
 
     except Exception as e:
-    return {
+        return {
         "股號": row.get("股號", ""),
         "股名": row.get("股名", ""),
         "市場": row.get("市場", ""),
