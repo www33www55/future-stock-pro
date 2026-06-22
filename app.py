@@ -374,8 +374,25 @@ def score_stock(row, market_return_20):
             "理由": "、".join(reasons)
         }
 
-    except Exception:
-        return None
+    except Exception as e:
+    return {
+        "股號": row.get("股號", ""),
+        "股名": row.get("股名", ""),
+        "市場": row.get("市場", ""),
+        "最新價": 0,
+        "分數": 0,
+        "等級": "錯誤",
+        "RS強度": 0,
+        "60日新高": "—",
+        "主升段": "—",
+        "突破回踩": "—",
+        "N字": "—",
+        "圓弧底": "—",
+        "停損價": 0,
+        "目標1": 0,
+        "目標2": 0,
+        "理由": f"錯誤：{str(e)[:80]}"
+    }
 
 
 # ======================
