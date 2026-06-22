@@ -446,7 +446,8 @@ if st.button("🔥 開始掃描 Pro"):
             result = future.result()
 
             if result:
-    results.append(result)
+                st.write(result)
+                results.append(result)
 
             progress.progress((i + 1) / total)
             status.write(f"掃描中：{i + 1}/{total}")
