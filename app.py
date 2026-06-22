@@ -469,10 +469,8 @@ if st.button("🔥 開始掃描 Pro"):
             progress.progress((i + 1) / total)
             status.write(f"掃描中：{i + 1}/{total}")
 
-    if results:
-        result_df = pd.DataFrame(results)
-        result_df = result_df.sort_values(["分數", "RS強度"], ascending=False).reset_index(drop=True)
-        result_df.insert(0, "排名", result_df.index + 1)
+    if result:
+        results.append(result)
 
         st.subheader("🏆 Pro強勢股排行榜")
         st.dataframe(result_df, use_container_width=True)
