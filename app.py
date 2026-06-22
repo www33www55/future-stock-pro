@@ -445,8 +445,8 @@ if st.button("🔥 開始掃描 Pro"):
         for i, future in enumerate(as_completed(futures)):
             result = future.result()
 
-            if result and result["分數"] >= min_score:
-                results.append(result)
+            if result:
+    results.append(result)
 
             progress.progress((i + 1) / total)
             status.write(f"掃描中：{i + 1}/{total}")
